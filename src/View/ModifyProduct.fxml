@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jbernsd_IMS.View.ModifyProductController">
+   <children>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="TRANSPARENT" height="480.0" layoutX="10.0" layoutY="10.0" stroke="#979797" strokeType="OUTSIDE" strokeWidth="2.0" width="780.0" />
+      <TableView fx:id="partTableAdd" layoutX="386.0" layoutY="103.0" prefHeight="108.0" prefWidth="349.0">
+        <columns>
+          <TableColumn fx:id="partIdColumnAdd" prefWidth="75.0" text="Part ID" />
+          <TableColumn fx:id="partNameColumnAdd" prefWidth="75.0" text="Part Name" />
+            <TableColumn fx:id="partInvColumnAdd" prefWidth="102.0" text="Inventory Level" />
+            <TableColumn fx:id="partCostColumnAdd" prefWidth="96.0" text="Price per Unit" />
+        </columns>
+      </TableView>
+      <TableView fx:id="partTableDel" layoutX="386.0" layoutY="290.0" prefHeight="108.0" prefWidth="349.0">
+         <columns>
+            <TableColumn fx:id="partIdColumnDel" prefWidth="75.0" text="Part ID" />
+            <TableColumn fx:id="partNameColumnDel" prefWidth="75.0" text="Part Name" />
+            <TableColumn fx:id="partInvColumnDel" prefWidth="102.0" text="Inventory Level" />
+            <TableColumn fx:id="partCostColumnDel" prefWidth="96.0" text="Price per Unit" />
+         </columns>
+      </TableView>
+      <Button fx:id="addBtn" layoutX="665.0" layoutY="221.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="30.0" prefWidth="70.0" text="Add">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="delBtn" layoutX="665.0" layoutY="408.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="30.0" prefWidth="70.0" text="Delete">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font></Button>
+      <Button fx:id="cancelBtn" layoutX="466.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="30.0" prefWidth="70.0" text="Cancel">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="saveBtn" layoutX="376.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="30.0" prefWidth="70.0" text="Save">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="searchFieldModProds" layoutX="536.0" layoutY="63.0" prefHeight="25.0" prefWidth="199.0" promptText="Please input partName/partID here...">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="searchBtn" layoutX="456.0" layoutY="61.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="30.0" prefWidth="70.0" text="Search">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="productIdField" layoutX="98.0" layoutY="132.0" prefHeight="44.0" prefWidth="149.0" promptText="Auto Generated">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="labelIdModProd" layoutX="29.0" layoutY="144.0" text="ID">
+         <font>
+            <Font name="Calibri Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="productNameField" layoutX="98.0" layoutY="182.0" prefHeight="44.0" prefWidth="149.0" promptText="Product Name">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="labelNameModProds" layoutX="29.0" layoutY="194.0" text="Name">
+         <font>
+            <Font name="Calibri Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="productInvField" layoutX="98.0" layoutY="232.0" prefHeight="44.0" prefWidth="70.0" promptText="Inv">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="labelInvModProds" layoutX="29.0" layoutY="244.0" text="Inv">
+         <font>
+            <Font name="Calibri Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="productCostField" layoutX="98.0" layoutY="282.0" prefHeight="44.0" prefWidth="70.0" promptText="Price">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="labelPriceModProds" layoutX="29.0" layoutY="294.0" text="Price">
+         <font>
+            <Font name="Calibri Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="maxField" layoutX="98.0" layoutY="332.0" prefHeight="44.0" prefWidth="70.0" promptText="Max">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="labelMaxModProds" layoutX="29.0" layoutY="344.0" text="Max">
+         <font>
+            <Font name="Calibri Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="minField" layoutX="228.0" layoutY="332.0" prefHeight="44.0" prefWidth="70.0" promptText="Min">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="labelMinModProds" layoutX="185.0" layoutY="344.0" text="Min">
+         <font>
+            <Font name="Calibri Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelModifyPart" layoutX="34.0" layoutY="53.0" text="Modify Products">
+         <font>
+            <Font name="Calibri Bold Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

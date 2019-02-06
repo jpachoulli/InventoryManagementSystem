@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jbernsd_IMS.View.MainScreenController">
+   <children>
+      <Rectangle fx:id="borderPartsMAIN" arcHeight="10.0" arcWidth="10.0" fill="TRANSPARENT" height="280.0" layoutX="25.0" layoutY="56.0" stroke="#979797" strokeLineCap="BUTT" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="366.0" />
+      <Label fx:id="labelInvMgmtSysMAIN" layoutX="18.0" layoutY="15.0" text=" Inventory Management System">
+         <font>
+            <Font name="Calibri Italic" size="24.0" />
+         </font>
+      </Label>
+      
+      <!-- Parts section begins here -->
+      <TableView fx:id="partTableMain" layoutX="35.0" layoutY="95.0" prefHeight="188.0" prefWidth="344.0">
+        <columns>            
+            <TableColumn fx:id="partIdColumnMain" prefWidth="54.0" text="Part ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partID" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn fx:id="partNameColumnMain" prefWidth="71.0" text="Part Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partName" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn fx:id="partInvColumnMain" minWidth="0.0" prefWidth="97.0" text="Inventory Level">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partInv" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn fx:id="partCostColumnMain" prefWidth="121.0" text="Price/Cost per Unit">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partCost" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        
+      </TableView>
+      <!-- Parts sections ends here -->
+      
+      <Label fx:id="labelPartsPrtsMAIN" layoutX="36.0" layoutY="58.0" text="Parts">
+         <font>
+            <Font name="Calibri Italic" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="searchPartButtonMain" layoutX="179.0" layoutY="63.0" mnemonicParsing="false" onAction="#searchPartTable" text="Search">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font></Button>
+      <TextField fx:id="searchPartFieldMain" layoutX="241.0" layoutY="63.0" prefHeight="25.0" prefWidth="136.0" />
+      <HBox layoutX="169.0" layoutY="294.0" spacing="15.0">
+         <children>
+            <Button fx:id="addPartButtonMain" mnemonicParsing="false" onAction="#handleNewPart" prefHeight="30.0" prefWidth="60.0" text="Add">
+               <font>
+                  <Font name="Calibri Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="modPartButtonMain" mnemonicParsing="false" onAction="#handleModPart" prefHeight="30.0" prefWidth="60.0" text="Modify">
+               <font>
+                  <Font name="Calibri Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="delPartButtonMain" mnemonicParsing="false" onAction="#handleDelete" prefHeight="30.0" prefWidth="60.0" text="Delete">
+               <font>
+                  <Font name="Calibri Italic" size="12.0" />
+               </font></Button>
+         </children>
+      </HBox>
+      <!-- Parts section ends here -->
+      
+      <!-- Products section begins here -->
+      <Rectangle fx:id="borderProdsMAIN" arcHeight="10.0" arcWidth="10.0" fill="TRANSPARENT" height="280.0" layoutX="410.0" layoutY="56.0" stroke="#979797" strokeLineCap="BUTT" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="370.0" />
+      <TableView fx:id="productTableMain" layoutX="420.0" layoutY="95.0" prefHeight="188.0" prefWidth="344.0">
+         <columns>
+            <TableColumn fx:id="productIdColumnMain" prefWidth="54.0" text="Prod ID" />
+            <TableColumn fx:id="productNameColumnMain" prefWidth="71.0" text="Prod Name" />
+            <TableColumn fx:id="productInvColumnMain" minWidth="0.0" prefWidth="97.0" text="Inventory Level" />
+            <TableColumn fx:id="productCostColumnMain" prefWidth="121.0" text="Price/Cost per Unit" />
+         </columns>
+      </TableView>
+      <Label fx:id="labelProdsMAIN" layoutX="421.0" layoutY="58.0" text="Products">
+         <font>
+            <Font name="Calibri Italic" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="searchProductButtonMain" layoutX="564.0" layoutY="63.0" mnemonicParsing="false" onAction="#searchProductTable" text="Search">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font></Button>
+      <TextField fx:id="searchProductFieldMain" layoutX="626.0" layoutY="63.0" prefHeight="25.0" prefWidth="136.0" />
+      <HBox layoutX="554.0" layoutY="294.0" spacing="15.0">
+         <children>
+            <Button fx:id="addProductButtonMain" mnemonicParsing="false" onAction="#handleNewProduct" prefHeight="30.0" prefWidth="60.0" text="Add">
+               <font>
+                  <Font name="Calibri Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="modProductButtonMain" mnemonicParsing="false" onAction="#handleModProduct" prefHeight="30.0" prefWidth="60.0" text="Modify">
+               <font>
+                  <Font name="Calibri Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="delProductButtonMain" mnemonicParsing="false" onAction="#handleDeleteProd" prefHeight="30.0" prefWidth="60.0" text="Delete">
+               <font>
+                  <Font name="Calibri Italic" size="12.0" />
+               </font></Button>
+         </children>
+      </HBox>
+      <Button fx:id="foundMe" layoutX="309.0" layoutY="109.0" mnemonicParsing="false" onAction="#foundMe" prefHeight="2.0" prefWidth="2.0" textFill="TRANSPARENT" AnchorPane.bottomAnchor="288.0" AnchorPane.leftAnchor="309.0" AnchorPane.rightAnchor="489.0" AnchorPane.topAnchor="109.0">
+         <font>
+            <Font size="2.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitButton" layoutX="370.0" layoutY="356.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClose" prefHeight="30.0" prefWidth="60.0" text="Exit">
+         <font>
+            <Font name="Calibri Italic" size="12.0" />
+         </font></Button>
+      <!-- Products section ends here -->
+   </children>
+</AnchorPane>
